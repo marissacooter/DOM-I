@@ -47,13 +47,24 @@ Array.from(navbar.children).forEach((link, i) => {
   link.textContent = siteContent.nav[`nav-item-${i + 1}`]
 })
 
-let navbar = document.querySelector('nav');
-navbar.textContent = siteContent.nav.style.color = 'green';
+// TASK TWO:
 
-// ^ long way:
-// const navbar = document.querySelectorAll('nav a')
-// navbar[0].textContent = siteContent['nav'] ['nav-item-1']
-// ^ copy for each [index], also used below for h4 and p
+const childElementOne = document.createElement('a');
+childElementOne.textContent = 'hi!'
+const parentElement = document.querySelector('nav')
+parentElement.prepend(childElementOne);
+
+
+const childElementTwo = document.createElement('a');
+childElementTwo.textContent = 'bye!'
+parentElement.appendChild(childElementTwo);
+
+
+const navcolor = document.querySelectorAll('nav a');
+console.log(navcolor);
+for ( let i = 0; i < navcolor.length; i++) {
+  navcolor[i].style.color ='green';
+}
 
 // // updating CTA h1:
 let ctah1 = document.querySelector('h1');
@@ -104,6 +115,9 @@ contactp[2].textContent = siteContent['contact']['email']
 
 let copyright = document.querySelector('footer')
 copyright.textContent = siteContent['footer']['copyright']
+
+// STRETCH:
+
 
 
 
