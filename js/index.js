@@ -40,3 +40,63 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// updating the nav bar:
+let navbar = document.querySelector('nav');
+Array.from(navbar.children).forEach((link, i) => {
+  link.textContent = siteContent.nav[`nav-item-${i + 1}`]
+})
+
+// ^ long way:
+// const navbar = document.querySelectorAll('nav a')
+// navbar[0].textContent = siteContent['nav'] ['nav-item-1']
+// ^ copy for each [index], also used below for h4 and p
+
+// // updating CTA h1:
+let ctah1 = document.querySelector('h1');
+ctah1.textContent = siteContent.cta.h1;
+
+// updating CTA button: 
+let button = document.querySelector('button');
+button.textContent = siteContent.cta.button;
+
+//updating code snippet image:
+let codeimg = document.getElementById('cta-img');
+codeimg.setAttribute('src', siteContent['cta']['img-src']);
+
+// updating middle content img:
+let middleimg = document.getElementById('middle-img');
+middleimg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// updating text content h4's:
+let txttitles = document.querySelectorAll('h4')
+txttitles[0].textContent = siteContent['main-content']['features-h4']
+txttitles[1].textContent = siteContent['main-content']['about-h4']
+txttitles[2].textContent = siteContent['main-content']['services-h4']
+txttitles[3].textContent = siteContent['main-content']['product-h4']
+txttitles[4].textContent = siteContent['main-content']['vision-h4']
+
+// trying to write a forEach loop for h4s ^ 
+// let txttitles = document.querySelector('h4');
+// Array.from(txttitles.children).forEach((h4, i) => {
+//   h4.textContent = siteContent.main-content[`${i}-h4-${i + 1}`]
+// })
+
+// updating text content p's:
+let txtcontent = document.querySelectorAll('p')
+txtcontent[0].textContent = siteContent['main-content']['features-content']
+txtcontent[1].textContent = siteContent['main-content']['about-content']
+txtcontent[2].textContent = siteContent['main-content']['services-content']
+txtcontent[3].textContent = siteContent['main-content']['product-content']
+txtcontent[4].textContent = siteContent['main-content']['vision-content']
+
+//updating contact:
+// let contacth4 = document.querySelector('h4');
+// contacth4.textContent = siteContent.contact.h4;
+
+
+
+
+
+
+
