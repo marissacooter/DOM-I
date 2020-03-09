@@ -47,6 +47,9 @@ Array.from(navbar.children).forEach((link, i) => {
   link.textContent = siteContent.nav[`nav-item-${i + 1}`]
 })
 
+let navbar = document.querySelector('nav');
+navbar.textContent = siteContent.nav.style.color = 'green';
+
 // ^ long way:
 // const navbar = document.querySelectorAll('nav a')
 // navbar[0].textContent = siteContent['nav'] ['nav-item-1']
@@ -91,8 +94,19 @@ txtcontent[3].textContent = siteContent['main-content']['product-content']
 txtcontent[4].textContent = siteContent['main-content']['vision-content']
 
 //updating contact:
-// let contacth4 = document.querySelector('h4');
-// contacth4.textContent = siteContent.contact.h4;
+let contacth4 = document.querySelector('.contact h4');
+contacth4.textContent = siteContent['contact']['contact-h4'];
+
+let contactp = document.querySelectorAll('.contact p');
+contactp[0].textContent = siteContent['contact']['address']
+contactp[1].textContent = siteContent['contact']['phone']
+contactp[2].textContent = siteContent['contact']['email']
+
+let copyright = document.querySelector('footer')
+copyright.textContent = siteContent['footer']['copyright']
+
+
+
 
 
 
